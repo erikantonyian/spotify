@@ -208,15 +208,7 @@ document.addEventListener('contextmenu', function(event) {
 });
 
 // Disable keyboard shortcuts for screenshots (e.g., Ctrl + Shift + S, Command + Shift + 4)
-navigator.mediaDevices.getDisplayMedia({ video: true }).then(stream => {
-  const videoTrack = stream.getVideoTracks()[0];
-  const imageCapture = new ImageCapture(videoTrack);
-
-  imageCapture.grabFrame().then(imageBitmap => {
-    const canvas = document.createElement('canvas');
-    canvas.width = imageBitmap.width;
-    canvas.height = imageBitmap.height;
-    canvas.getContext('2d').drawImage(imageBitmap, 0, 0);
-    // Do something with the canvas, like display it or send it to a server
-  });
+document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
 });
+
