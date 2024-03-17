@@ -62,6 +62,10 @@ const playlist = [
     }
 ]
 
+document.addEventListener('contextmenu', function(event) {
+    event.preventDefault();
+})
+
 const url = window.location.search;
 const params = new URLSearchParams(url)
 
@@ -202,13 +206,3 @@ if (params.get("playlist_id")) {
         playlists(item);
     })
 }
-
-document.addEventListener('contextmenu', function(event) {
-    event.preventDefault();
-});
-
-// Disable keyboard shortcuts for screenshots (e.g., Ctrl + Shift + S, Command + Shift + 4)
-document.addEventListener('contextmenu', function (e) {
-    e.preventDefault();
-});
-
