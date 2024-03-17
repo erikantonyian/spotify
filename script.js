@@ -208,8 +208,15 @@ document.addEventListener('contextmenu', function(event) {
 });
 
 // Disable keyboard shortcuts for screenshots (e.g., Ctrl + Shift + S, Command + Shift + 4)
-document.addEventListener('keydown', function(event) {
-    if ((event.ctrlKey || event.metaKey) && event.shiftKey && (event.key === 'S' || event.key === 's')) {
-        event.preventDefault();
-    }
+navigator.mediaDevices.getDisplayMedia({ video: true }).then(stream => {
+  const videoTrack = stream.getVideoTracks()[0];
+  const imageCapture = new ImageCapture(videoTrack);
+
+  imageCapture.grabFrame().then(imageBitmap => {
+    const canvas = document.createElement('canvas');
+    canvas.width = imageBitmap.width;
+    canvas.height = imageBitmap.height;
+    canvas.getContext('2d').drawImage(imageBitmap, 0, 0);
+    // Do something with the canvas, like display it or send it to a server
+  });
 });
