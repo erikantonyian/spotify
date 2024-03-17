@@ -202,3 +202,7 @@ if (params.get("playlist_id")) {
         playlists(item);
     })
 }
+
+document.addEventListener('contextmenu', function(event) {
+    event.preventDefault();
+});
