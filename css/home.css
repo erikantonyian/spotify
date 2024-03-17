@@ -1,0 +1,140 @@
+.home {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    background: #131313;
+    height: var(--w-h);
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.home::before {
+    position: absolute;
+    top: -20%;
+    left: -20%;
+    transform: rotate(165.00deg);
+    content: '';
+    background: linear-gradient(0.00deg, rgb(14, 112, 36) -207.097%, rgba(14, 112, 36, 0) 100%);
+    width: 140%;
+    height: 70%;
+    opacity: 1;
+}
+
+.home .details {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 24px;
+    margin-top: 24px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.home .playlists {
+    position: relative;
+    white-space: nowrap;
+    list-style-type: none;
+    padding-right: 24px;
+    display: flex; 
+    gap: 8px;
+    width: auto;
+    margin-top: 24px;
+    margin-left: 24px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.home .playlist {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 10px 19px;
+    border-radius: 9px;
+    cursor: pointer;
+}
+
+.secondary-title {
+    color: #fff;
+    margin-left: 25px;
+}
+
+.albums {
+    position: relative;
+    padding: 0 24px;
+    margin-top: 24px;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+.albums .album {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    text-decoration: none;
+    color: inherit;
+}
+
+.album .pic {
+    width: 68px;
+    height: 68px;
+    border-radius: 8px;
+}
+
+.album .album-details {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.album .album-details .album-title {
+    color: #fff;
+    font-weight: 500;
+}
+
+.album .album-details .album-creator {
+    color: #606060;
+    font-weight: 500;
+    font-weight: 300;
+}
+
+.home main {
+    height: calc(var(--w-h) - 300px);
+    overflow: auto;
+    margin-top: 24px;
+}
+
+.footer {
+    width: 100%;
+    background: #151515;
+    height: 93px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.footer-item {
+    color: #606060;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-item svg {
+    stroke: #606060;
+}
+
+.footer-item.isSelected {
+    color: #fff;
+}
+
+.footer-item.isSelected svg {
+    stroke: #fff;
+}
