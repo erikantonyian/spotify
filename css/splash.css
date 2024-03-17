@@ -12,7 +12,6 @@
 }
 
 html {
-    .prevent-selection {
     user-select: none;
     touch-action: none; /* Disable touch events */
 }
