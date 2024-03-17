@@ -75,13 +75,6 @@ function isMobileDevice() {
     return /Mobi|Android/i.test(navigator.userAgent);
 }
 
-// if (!isMobileDevice()) {
-//     console.log('This is not a mobile device.');
-//     // home.remove();
-//     // player.remove();
-//     // splash.remove();
-// }
-
 
 if (params.get("playlist_id")) {
     home.hidden = true;
